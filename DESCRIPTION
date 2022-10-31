@@ -1,7 +1,7 @@
 Package: Sysrecon
 Type: Package
 Title: Systematical Metabolic Reconstruction
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     c(person(given = "Shilin",
              family = "Ouyang",
@@ -24,8 +24,9 @@ Authors@R:
              role = "aut"),
       person("RStudio", 
              role = c("cph", "fnd")))
-Description: Visualize the steps, transformation information, databases used in a metabolic reconstruction,
-    by inputting an article in the form of txt.
+Description: The tool that quantitatively and qualitatively specifies each reconstruction steps 
+    and can generate a template list of reconstruction steps dynamically selected from a reconstruction step reservoir, 
+    constructed based on all available published GSM papers.
 License: GPL-3
 Imports: ape, dplyr, ggplot2, ggtree, methods, patchwork, plyr,
         RColorBrewer, readr, readxl, rlang, SnowballC, stats, stringr,
@@ -35,7 +36,7 @@ LazyData: true
 RoxygenNote: 7.1.2
 Depends: R (>= 3.5.0)
 NeedsCompilation: no
-Packaged: 2022-10-17 14:57:48 UTC; lenovo
+Packaged: 2022-10-31 07:01:44 UTC; lenovo
 Author: Shilin Ouyang [aut, cre],
   Zihao Li [aut],
   Jiamin Hu [aut],
@@ -45,4 +46,4 @@ Author: Shilin Ouyang [aut, cre],
   RStudio [cph, fnd]
 Maintainer: Shilin Ouyang <ouyangshilin@hnu.edu.cn>
 Repository: CRAN
-Date/Publication: 2022-10-18 06:42:46 UTC
+Date/Publication: 2022-10-31 10:20:11 UTC
