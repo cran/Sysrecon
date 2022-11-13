@@ -1,7 +1,7 @@
 Package: Sysrecon
 Type: Package
 Title: Systematical Metabolic Reconstruction
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     c(person(given = "Shilin",
              family = "Ouyang",
@@ -24,19 +24,24 @@ Authors@R:
              role = "aut"),
       person("RStudio", 
              role = c("cph", "fnd")))
-Description: The tool that quantitatively and qualitatively specifies each reconstruction steps 
-    and can generate a template list of reconstruction steps dynamically selected from a reconstruction step reservoir, 
-    constructed based on all available published GSM papers.
+Description: In the past decade, genome-scale metabolic reconstructions have widely been 
+    used to comprehend the systems biology of metabolic pathways within an organism. 
+    Different GSMs are constructed using various techniques that 
+    require distinct steps, but the input data, information conversion and software tools
+    are neither concisely defined nor mathematically or programmatically formulated
+    in a context-specific manner.The tool that quantitatively and qualitatively specifies
+    each reconstruction steps and can generate a template list of reconstruction steps dynamically
+    selected from a reconstruction step reservoir, constructed based on all available published papers.
 License: GPL-3
 Imports: ape, dplyr, ggplot2, ggtree, methods, patchwork, plyr,
         RColorBrewer, readr, readxl, rlang, SnowballC, stats, stringr,
         tidyverse, tm
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Depends: R (>= 3.5.0)
 NeedsCompilation: no
-Packaged: 2022-10-31 07:01:44 UTC; lenovo
+Packaged: 2022-11-12 11:49:19 UTC; ouyangshilin
 Author: Shilin Ouyang [aut, cre],
   Zihao Li [aut],
   Jiamin Hu [aut],
@@ -46,4 +51,4 @@ Author: Shilin Ouyang [aut, cre],
   RStudio [cph, fnd]
 Maintainer: Shilin Ouyang <ouyangshilin@hnu.edu.cn>
 Repository: CRAN
-Date/Publication: 2022-10-31 10:20:11 UTC
+Date/Publication: 2022-11-13 05:30:02 UTC
