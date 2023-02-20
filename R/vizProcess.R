@@ -145,7 +145,6 @@
 #' @param stepsMatrix A data frame contains the marker words, threshold value, steps, group and other information about the metabolic reconstruction. The default file is in the data.
 #' @param stepTypes A data frame contains the labels and groups of the metabolic reconstructions steps. The default file is in the data.
 #' @param contentTypes A data frame contains the labels and groups of the metabolic reconstructions content The default file is in the data.
-#' @import tidyverse
 #' @import SnowballC
 #' @import ggtree
 #' @import SnowballC

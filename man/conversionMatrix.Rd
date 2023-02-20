@@ -3,7 +3,7 @@
 \docType{data}
 \name{conversionMatrix}
 \alias{conversionMatrix}
-\title{A data frame contains the details of the steps of the metabolic reconstruction}
+\title{A data frame contains the details of the transformation of the metabolic reconstruction}
 \format{
 A data frame contains 93 rows and 67 variables:
 \describe{
@@ -80,6 +80,6 @@ A data frame contains 93 rows and 67 variables:
 conversionMatrix
 }
 \description{
-A data frame contains the details of the steps of the metabolic reconstruction
+A data frame contains the details of the transformation of the metabolic reconstruction
 }
 \keyword{datasets}

@@ -14,6 +14,6 @@ A data frame with characters:
 inputTxt
 }
 \description{
-A dataset containing the contents of the metabolic reconstruction:
+A variable containing the contents of the metabolic reconstruction:
 }
 \keyword{datasets}

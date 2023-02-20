@@ -10,6 +10,8 @@
 #' @import ggtree
 #' @import patchwork
 #' @import SnowballC
+#' @importFrom dplyr full_join
+#' @importFrom magrittr `%>%`
 #' @importFrom ape as.phylo
 #' @importFrom stats hclust dist na.omit
 #' @importFrom grDevices colorRampPalette
@@ -31,6 +33,8 @@
 
         rownames(Matrix) <- Matrix$Steps
         data <- Matrix[,-c(1:4)]
+        #data <- data[apply(data, 1, function(x) any(x)!=0),apply(data, 2, function(x) any(x)!=0)]
+        data <- data.frame(data)
 
         # Calculate the evolutionary tree distance
         tree <- hclust(dist(data))
@@ -72,6 +76,7 @@
 
         # Remove the frequency information
         data <- t(Matrix[,-c(1:4)])
+        #data <- data[apply(data, 1, function(x) any(x)!=0),apply(data, 2, function(x) any(x)!=0)]
 
         # Calculate the evolutionary tree distance
         tree1 <- hclust(dist(data))
@@ -117,7 +122,7 @@
         coefficientPosi_1 <- which(stoi == -1,arr.ind = T)%>%data.frame()
         coefficientPosi_1$num <- -1
 
-        coefficientPosi_2 <- which(stoi == -1,arr.ind = T)%>%data.frame()
+        coefficientPosi_2 <- which(stoi == 1,arr.ind = T)%>%data.frame()
         coefficientPosi_2$num <- 1
 
         coefficientPosi <- rbind(coefficientPosi_1, coefficientPosi_2)
@@ -255,9 +260,9 @@
                 scale_x_continuous(name = 'Steps', breaks = seq(1, dim[2], 1), expand = c(0.008,0.008),
                                    labels = pwdata$colname[!is.na(pwdata$colname)]) +
                 # Draw the connecting lines for each row
-                geom_path(aes(x = .data$row_x_1, y = .data$col_y_1), na.rm = T, size = 0.25) +
+                geom_path(aes(x = .data$row_x_1, y = .data$col_y_1), na.rm = T, linewidth = 1) +
                 # Draw the connecting lines for each column
-                geom_path(aes(x = .data$row_x_2, y = .data$col_y_2, colour = .data$degree), na.rm = T, size = (pwdata$degree)/4, show.legend = T) +
+                geom_path(aes(x = .data$row_x_2, y = .data$col_y_2, colour = .data$degree), na.rm = T, linewidth = 1, show.legend = T) +
                 # Change axis label format, rotation, color, font, etc.
                 theme(axis.text.x = element_text(colour = "grey20", size = 10, angle = 90, hjust = 1, vjust = 0, face = "plain"),
                       axis.text.y = element_text(colour = "grey20", size = 10, angle = 0, hjust = 1, vjust = 0, face = "plain"))+

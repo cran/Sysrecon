@@ -6,11 +6,12 @@
 #' @param conversionTypes Grouping information for conversion content
 #' @return a plot
 #' @import ggtree
-#' @import tidyverse
 #' @import ggplot2
 #' @import dplyr
 #' @import SnowballC
 #' @import patchwork
+#' @importFrom dplyr full_join
+#' @importFrom magrittr `%>%`
 #' @importFrom ape as.phylo
 #' @importFrom stats hclust dist na.omit
 #' @importFrom grDevices colorRampPalette
@@ -31,6 +32,7 @@
   # Draw the evolutionary tree of metabolic processes
   rownames(Matrix) <- Matrix$Steps
   data <- Matrix[,-c(1:4)]
+  data <- data[apply(data, 1, function(x) any(x)!=0),apply(data, 2, function(x) any(x)!=0)]
 
   # Calculate the evolutionary tree distance
   tree <- hclust(dist(data))
@@ -55,7 +57,7 @@
     # Modify the title of the legend
     labs(colour = 'Group of steps')+
     # Adjust the thickness of the legend line
-    guides(colour = guide_legend(override.aes = list(size=2)))
+    guides(colour = guide_legend(override.aes = list(size=5)))
 
   # Extracting information about the top and bottom positions of metabolic processes when the p2 evolutionary tree is drawn,
   # which is used to adjust the relative positions of the columns of the matrix
@@ -67,6 +69,7 @@
 
   # Remove frequency information
   data <- t(Matrix[,-c(1:4)])
+  data <- data[apply(data, 1, function(x) any(x)!=0),apply(data, 2, function(x) any(x)!=0)]
 
   # Calculate the evolutionary tree distance
   tree <- hclust(dist(data))
@@ -115,10 +118,11 @@
                        labels = str_replace_all(colnames(conversion), '\\.', ' '), expand = c(0.01, 0.01), position = 'bottom')+
     geom_point(data = coefficientPosi[1:(nrow(coefficientPosi)-4),], aes(x = col, y = row), size = 2, color = "#FA7F6F")+
     geom_point(data = coefficientPosi[(nrow(coefficientPosi)-3):nrow(coefficientPosi),], aes(x = col, y = row), size = 2, color = NA)+
-    theme(axis.text.x = element_text(size = 10),
-          axis.text.y = element_text(size = 10),
-          axis.title.x = element_text(size = 20),
-          axis.title.y = element_text(size = 20)) +
+    theme(axis.text.x = element_text(size = 25),
+          axis.text.y = element_text(size = 25),
+          axis.title.x = element_text(size = 40),
+          axis.title.y = element_text(size = 40),
+          legend.text = element_text(size = 25)) +
     # Change axis label format, rotation, color, font, etc.
     theme(axis.text.x = element_text(colour = "grey20", size = 10, angle = 90, hjust = 1, vjust = 0, face = "plain"),
           axis.text.y = element_text(colour = "grey20", size = 10, angle = 0, hjust = 1, vjust = 0, face = "plain"))+

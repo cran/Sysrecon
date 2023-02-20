@@ -10,14 +10,14 @@
 #' @param toolsTypes A data frame contains the databases and the tools used in the metabolic reconstruction.
 #' @param contentTypes A data frame contains the labels and groups of the metabolic reconstructions content The default file is in the data.
 #' @return The pictures that visualize the steps, transformation and databases and tools of the metabolic reconstruction.
+#' @importFrom utils browseURL
 #' @export
-#' @import readxl
-#' @import readr
 #' @examples
+#'
 #' exam <- Sysrecon(inputTxt, stepsMatrix, stepTypes, conversionMatrix, conversionTypes,
 #'   toolsMatrix, toolsTypes, contentTypes)
 
-  Sysrecon <- function(inputTxt, stepsMatrix, stepTypes, conversionMatrix, conversionTypes, toolsMatrix, toolsTypes, contentTypes){
+  Sysrecon <- function(inputTxt, stepsMatrix, stepTypes, conversionMatrix, conversionTypes, toolsMatrix, toolsTypes,contentTypes){
 
   text <- inputTxt
   text <- paste0(text[,1], collapse = ' ')
@@ -45,6 +45,11 @@
   figure_3 <- vizTools(text, toolsMatrix, stepTypes, toolsTypes)
   print(figure_3)
 
+  response = readline("Do you want to open the MentaID to search the source of the ID in the article?[Y/n]")
+
+  if(response == 'Y'|response == 'y'| response == 'yes'){
+    browseURL("https://molaison.shinyapps.io/MantaID")
+  }
 }
 
 

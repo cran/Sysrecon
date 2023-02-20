@@ -1,6 +1,6 @@
 #' inputTxt
 #'
-#' A dataset containing the contents of the metabolic reconstruction:
+#' A variable containing the contents of the metabolic reconstruction:
 #'
 #' @format A data frame with characters:
 #' \describe{
@@ -97,7 +97,7 @@
 #'   }
 "stepTypes"
 
-#' A data frame contains the details of the steps of the metabolic reconstruction
+#' A data frame contains the details of the transformation of the metabolic reconstruction
 #'
 #' @format A data frame contains 93 rows and 67 variables:
 #' \describe{

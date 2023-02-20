@@ -42,6 +42,7 @@ Input the txt and output the visualization of the steps, transformation and data
 Input takes a data.frame x with two variables v and w and returns the maximum knapsack value and which elements (rows in the data.frame).
 }
 \examples{
+
 exam <- Sysrecon(inputTxt, stepsMatrix, stepTypes, conversionMatrix, conversionTypes,
   toolsMatrix, toolsTypes, contentTypes)
 }

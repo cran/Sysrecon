@@ -1,0 +1,20 @@
+1
+We retrieved PATHNET data, a prior reconstruction of the
+H. salinarum metabolic network based on Kyoto Encyclopedia
+of Genes and Genomes (KEGG) defined pathways,58 from the
+Halolex database. We used this as the starting point for
+further reconstruction using literature review and bioinfor-
+matic means. The evidences used for the inclusion of reactions/
+enzymes to the network include enzymatic assays, labeling
+studies, and nutrient uptake reports (for transporters).
+Reactions described by such references were included with or
+without genetic evidence. Similarly, pathway gaps and reac-
+tions devoid of literature or genetic indicators but required by
+the network to produce a compound essential for growth
+were also added. In cases where detailed information on
+H. salinarum R-1 were unavailable, data from various strains
+ of Halobacterium salinarum were used. Likewise, reaction
+reversibilities were also taken from literature sources whenever
+available. Particularly helpful in this regard was the BRENDA
+database,59 which, among other things, stores reversibility
+information from various organisms. 
